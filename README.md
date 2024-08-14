@@ -1,7 +1,10 @@
 # RSDKv2 Decompilation
-A Full Decompilation of Sonic Nexus (2008), a Retro Engine game made by Taxman.
+RSDKv2 Decompilation modified for Sonic Nexus Restored
 
 Without assets from the game, this decompilation will not run. You can download the game [here](https://info.sonicretro.org/Sonic_Nexus).
+
+* Retro Engine by Christian Whitehead (A.K.A. The Taxman)
+*
 
 # Additional Tweaks
 * Added a built in mod loader, allowing to easily create and play mods.
@@ -12,7 +15,6 @@ Without assets from the game, this decompilation will not run. You can download 
 # How to build
 ## Windows
 * Clone the repo, then follow the instructions in the [depencencies readme for Windows](./dependencies/windows/dependencies.txt) to setup dependencies, then build via the visual studio solution.
-* Alternatively, you can grab a prebuilt executable from the releases section.
 
 ## Mac
 * Clone the repo, follow the instructions in the [depencencies readme for Mac](./dependencies/mac/dependencies.txt) to setup dependencies, then build via the Xcode project.
@@ -21,16 +23,18 @@ Without assets from the game, this decompilation will not run. You can download 
 * To setup your build enviroment and library dependecies, run the following commands:
   * Ubuntu (Mint, Pop!_OS, etc...): `sudo apt install build-essential git libsdl2-dev libvorbis-dev libogg-dev libtheora-dev`
   * Arch Linux: `sudo pacman -S base-devel git sdl2 libvorbis libogg libtheora`
-* Clone the repo with the following command: `git clone https://github.com/Rubberduckycooly/Sonic-Nexus-Decompilation.git`
-* Go into the repo you just cloned with `cd Sonic-Nexus-Decompilation`.
+* Clone the repo with the following command: `git clone https://github.com/EggBanana123/Sonic-Nexus-Restored`
+* Go into the repo you just cloned with `cd Sonic-Nexus-Restored`.
 * Then run `make CXXFLAGS=-O2 -j5`.
   * If your distro is using gcc 8.x.x, then add the argument `LIBS=-lstdc++fs`.
   * The `CXXFLAGS` option can be removed if you do not want optimizations.
   * -j switch is optional, but will make building faster by running it parallel on multiple cores (8 cores would be -j9.)
 
+* Alternatively, you can grab a prebuilt executable from the releases section.
+
 ## Unofficial Branches
 Follow the installation instructions in the readme of each branch.
-* For the **Nintendo Switch**, go to [LittlePlanetCD's fork](https://github.com/LittlePlanetCD/Sonic-Nexus-Switch).
+* No unnoficial branches at the time of writing
   
 Because these branches are unofficial, we can't provide support for them and they may not be up-to-date.
 
