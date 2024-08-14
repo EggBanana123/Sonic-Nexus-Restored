@@ -4,7 +4,7 @@ RSDKv2 Decompilation modified for Sonic Nexus Restored
 Without assets from the game, this decompilation will not run. You can download the game [here](https://info.sonicretro.org/Sonic_Nexus).
 
 * Retro Engine by Christian Whitehead (A.K.A. The Taxman)
-*
+* RSDKv2 Decopilation by Rubberduckycooly, MegAmi, Lavesiime, LittlePlanetCD, and Leonx254
 
 # Additional Tweaks
 * Added a built in mod loader, allowing to easily create and play mods.
