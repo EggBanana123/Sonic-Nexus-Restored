@@ -7,10 +7,8 @@ Without assets from the game, this decompilation will not run. You can download 
 * RSDKv2 Decopilation by Rubberduckycooly, MegAmi, Lavesiime, LittlePlanetCD, and Leonx254
 
 # Additional Tweaks
-* Added a built in mod loader, allowing to easily create and play mods.
-* There is now a `settings.ini` file that the game uses to load all settings, similar to Sonic Mania.
-* Dev menu can now be accessed from anywhere by pressing the `ESC` key if enabled in the config.
-* The `F12` pause, `F11` step over & fast forward debug features from Sonic Mania have all been ported and are enabled if `devMenu` is enabled in the config.
+* Added buttons featured in v4 (X, Y, Z,  L, R,  Select)
+* more junk to be added soon !11!!
 
 # How to build
 ## Windows
