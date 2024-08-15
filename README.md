@@ -28,8 +28,6 @@ Without assets from the game, this decompilation will not run. You can download 
   * The `CXXFLAGS` option can be removed if you do not want optimizations.
   * -j switch is optional, but will make building faster by running it parallel on multiple cores (8 cores would be -j9.)
 
-* Alternatively, you can grab a prebuilt executable from the releases section.
-
 ## Unofficial Branches
 Follow the installation instructions in the readme of each branch.
 * No unnoficial branches at the time of writing
