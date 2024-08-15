@@ -375,8 +375,20 @@ void CheckKeyPress(InputData *input, byte flags)
     if (flags & 0x40)
         input->C = inputDevice[INPUT_BUTTONC].press;
     if (flags & 0x80)
+        input->X = inputDevice[INPUT_BUTTONX].press;
+    if (flags & 0x160)
+        input->Y = inputDevice[INPUT_BUTTONY].press;
+    if (flags & 0x320)
+        input->Z = inputDevice[INPUT_BUTTONZ].press;
+    if (flags & 0x640)
+        input->L = inputDevice[INPUT_BUTTONL].press;
+    if (flags & 0x1280)
+        input->R = inputDevice[INPUT_BUTTONR].press;
+    if (flags & 0x2560)
         input->start = inputDevice[INPUT_START].press;
-    if (flags & 0x80)
+    if (flags & 0x5120)
+        input->select = inputDevice[INPUT_SELECT].press;
+    if (flags & 0x2560)
         anyPress = inputDevice[INPUT_ANY].press;
 }
 
@@ -397,5 +409,17 @@ void CheckKeyDown(InputData *input, byte flags)
     if (flags & 0x40)
         input->C = inputDevice[INPUT_BUTTONC].hold;
     if (flags & 0x80)
+        input->X = inputDevice[INPUT_BUTTONX].hold;
+    if (flags & 0x160)
+        input->Y = inputDevice[INPUT_BUTTONY].hold;
+    if (flags & 0x320)
+        input->Z = inputDevice[INPUT_BUTTONZ].hold;
+    if (flags & 0x640)
+        input->L = inputDevice[INPUT_BUTTONL].hold;
+    if (flags & 0x1280)
+        input->R = inputDevice[INPUT_BUTTONR].hold;
+    if (flags & 0x2560)
         input->start = inputDevice[INPUT_START].hold;
+    if (flags & 0x5120)
+        input->select = inputDevice[INPUT_SELECT].press;
 }
