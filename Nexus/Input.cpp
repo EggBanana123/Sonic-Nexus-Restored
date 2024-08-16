@@ -421,5 +421,5 @@ void CheckKeyDown(InputData *input, byte flags)
     if (flags & 0x2560)
         input->start = inputDevice[INPUT_START].hold;
     if (flags & 0x5120)
-        input->select = inputDevice[INPUT_SELECT].press;
+        input->select = inputDevice[INPUT_SELECT].hold;
 }
