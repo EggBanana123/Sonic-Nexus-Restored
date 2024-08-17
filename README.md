@@ -1,4 +1,4 @@
-# RSDKv2 Decompilation
+# Sonic Nexus Restored
 RSDKv2 Decompilation modified for Sonic Nexus Restored
 
 Without assets from the game, this decompilation will not run. You can download the game [here](https://info.sonicretro.org/Sonic_Nexus).
