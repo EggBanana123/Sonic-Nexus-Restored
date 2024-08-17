@@ -2698,7 +2698,13 @@ void ProcessScript(int scriptCodePtr, int jumpTablePtr, byte scriptSub)
                     case VAR_KEYDOWNBUTTONA: keyDown.A = scriptEng.operands[i]; break;
                     case VAR_KEYDOWNBUTTONB: keyDown.B = scriptEng.operands[i]; break;
                     case VAR_KEYDOWNBUTTONC: keyDown.C = scriptEng.operands[i]; break;
+                    case VAR_KEYDOWNBUTTONX: keyDown.X = scriptEng.operands[i]; break;
+                    case VAR_KEYDOWNBUTTONY: keyDown.Y = scriptEng.operands[i]; break;
+                    case VAR_KEYDOWNBUTTONZ: keyDown.Z = scriptEng.operands[i]; break;
+                    case VAR_KEYDOWNBUTTONL: keyDown.L = scriptEng.operands[i]; break;
+                    case VAR_KEYDOWNBUTTONR: keyDown.R = scriptEng.operands[i]; break;
                     case VAR_KEYDOWNSTART: keyDown.start = scriptEng.operands[i]; break;
+                    case VAR_KEYDOWNSELECT: keyDown.select = scriptEng.operands[i]; break;
                     case VAR_KEYPRESSUP: keyPress.up = scriptEng.operands[i]; break;
                     case VAR_KEYPRESSDOWN: keyPress.down = scriptEng.operands[i]; break;
                     case VAR_KEYPRESSLEFT: keyPress.left = scriptEng.operands[i]; break;
@@ -2706,7 +2712,13 @@ void ProcessScript(int scriptCodePtr, int jumpTablePtr, byte scriptSub)
                     case VAR_KEYPRESSBUTTONA: keyPress.A = scriptEng.operands[i]; break;
                     case VAR_KEYPRESSBUTTONB: keyPress.B = scriptEng.operands[i]; break;
                     case VAR_KEYPRESSBUTTONC: keyPress.C = scriptEng.operands[i]; break;
+                    case VAR_KEYPRESSBUTTONX: keyPress.X = scriptEng.operands[i]; break;
+                    case VAR_KEYPRESSBUTTONY: keyPress.Y = scriptEng.operands[i]; break;
+                    case VAR_KEYPRESSBUTTONZ: keyPress.Z = scriptEng.operands[i]; break;
+                    case VAR_KEYPRESSBUTTONL: keyPress.L = scriptEng.operands[i]; break;
+                    case VAR_KEYPRESSBUTTONR: keyPress.R = scriptEng.operands[i]; break;
                     case VAR_KEYPRESSSTART: keyPress.start = scriptEng.operands[i]; break;
+                    case VAR_KEYPRESSSELECT: keyPress.select = scriptEng.operands[i]; break;
                     case VAR_MENU1SELECTION: gameMenu[0].selection1 = scriptEng.operands[i]; break;
                     case VAR_MENU2SELECTION: gameMenu[1].selection1 = scriptEng.operands[i]; break;
                     case VAR_STAGEACTIVELIST: activeStageList = scriptEng.operands[i]; break;
