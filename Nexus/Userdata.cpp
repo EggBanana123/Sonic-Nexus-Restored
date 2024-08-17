@@ -192,10 +192,10 @@ void InitUserdata()
 #if RETRO_USING_SDL2
         if (!ini.GetInteger("Keyboard 1", "Up", &inputDevice[INPUT_UP].keyMappings))
             inputDevice[0].keyMappings = SDL_SCANCODE_W;
-        if (!ini.GetInteger("Keyboard 1", "Left", &inputDevice[INPUT_LEFT].keyMappings))
-            inputDevice[1].keyMappings = SDL_SCANCODE_A;
         if (!ini.GetInteger("Keyboard 1", "Down", &inputDevice[INPUT_DOWN].keyMappings))
-            inputDevice[2].keyMappings = SDL_SCANCODE_S;
+            inputDevice[1].keyMappings = SDL_SCANCODE_S;
+        if (!ini.GetInteger("Keyboard 1", "Left", &inputDevice[INPUT_LEFT].keyMappings))
+            inputDevice[2].keyMappings = SDL_SCANCODE_A;
         if (!ini.GetInteger("Keyboard 1", "Right", &inputDevice[INPUT_RIGHT].keyMappings))
             inputDevice[3].keyMappings = SDL_SCANCODE_D;
         if (!ini.GetInteger("Keyboard 1", "A", &inputDevice[INPUT_BUTTONA].keyMappings))
@@ -221,9 +221,9 @@ void InitUserdata()
 
         if (!ini.GetInteger("Controller 1", "Up", &inputDevice[INPUT_UP].contMappings))
             inputDevice[0].contMappings = SDL_CONTROLLER_BUTTON_DPAD_UP;
-        if (!ini.GetInteger("Controller 1", "Left", &inputDevice[INPUT_LEFT].contMappings))
+        if (!ini.GetInteger("Controller 1", "Down", &inputDevice[INPUT_LEFT].contMappings))
             inputDevice[1].contMappings = SDL_CONTROLLER_BUTTON_DPAD_DOWN;
-        if (!ini.GetInteger("Controller 1", "Down", &inputDevice[INPUT_DOWN].contMappings))
+        if (!ini.GetInteger("Controller 1", "Left", &inputDevice[INPUT_DOWN].contMappings))
             inputDevice[2].contMappings = SDL_CONTROLLER_BUTTON_DPAD_LEFT;
         if (!ini.GetInteger("Controller 1", "Right", &inputDevice[INPUT_RIGHT].contMappings))
             inputDevice[3].contMappings = SDL_CONTROLLER_BUTTON_DPAD_RIGHT;
@@ -253,9 +253,9 @@ void InitUserdata()
         if (!ini.GetInteger("Keyboard 1", "Up", &inputDevice[INPUT_UP].keyMappings))
             inputDevice[0].keyMappings = SDLK_w;
         if (!ini.GetInteger("Keyboard 1", "Down", &inputDevice[INPUT_DOWN].keyMappings))
-            inputDevice[1].keyMappings = SDLK_a;
+            inputDevice[1].keyMappings = SDLK_s;
         if (!ini.GetInteger("Keyboard 1", "Left", &inputDevice[INPUT_LEFT].keyMappings))
-            inputDevice[2].keyMappings = SDLK_s;
+            inputDevice[2].keyMappings = SDLK_a;
         if (!ini.GetInteger("Keyboard 1", "Right", &inputDevice[INPUT_RIGHT].keyMappings))
             inputDevice[3].keyMappings = SDLK_d;
         if (!ini.GetInteger("Keyboard 1", "A", &inputDevice[INPUT_BUTTONA].keyMappings))
