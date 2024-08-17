@@ -158,8 +158,8 @@ void ProcessPlayerControl(Player *Player)
             Player->left  = false;
             Player->right = false;
         }
-        Player->jumpHold  = keyDown.C | keyDown.B | keyDown.A;
-        Player->jumpPress = keyPress.C | keyPress.B | keyPress.A;
+        Player->jumpHold  = keyDown.X | keyDown.C | keyDown.B | keyDown.A;
+        Player->jumpPress = keyPress.X | keyPress.C | keyPress.B | keyPress.A;
         upBuffer <<= 1;
         upBuffer |= (byte)Player->up;
         downBuffer <<= 1;
