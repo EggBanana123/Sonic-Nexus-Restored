@@ -221,9 +221,9 @@ void InitUserdata()
 
         if (!ini.GetInteger("Controller 1", "Up", &inputDevice[INPUT_UP].contMappings))
             inputDevice[0].contMappings = SDL_CONTROLLER_BUTTON_DPAD_UP;
-        if (!ini.GetInteger("Controller 1", "Down", &inputDevice[INPUT_LEFT].contMappings))
+        if (!ini.GetInteger("Controller 1", "Down", &inputDevice[INPUT_DOWN].contMappings))
             inputDevice[1].contMappings = SDL_CONTROLLER_BUTTON_DPAD_DOWN;
-        if (!ini.GetInteger("Controller 1", "Left", &inputDevice[INPUT_DOWN].contMappings))
+        if (!ini.GetInteger("Controller 1", "Left", &inputDevice[INPUT_LEFT].contMappings))
             inputDevice[2].contMappings = SDL_CONTROLLER_BUTTON_DPAD_LEFT;
         if (!ini.GetInteger("Controller 1", "Right", &inputDevice[INPUT_RIGHT].contMappings))
             inputDevice[3].contMappings = SDL_CONTROLLER_BUTTON_DPAD_RIGHT;
