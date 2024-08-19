@@ -8,6 +8,7 @@ Without assets from the game, this decompilation will not run. You can download 
 
 # Additional Tweaks
 * Added buttons featured in v4 (X, Y, Z,  L, R,  Select)
+* WASD controls by default hehe
 * more junk to be added soon !11!!
 
 # How to build
