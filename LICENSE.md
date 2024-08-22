@@ -1,6 +1,6 @@
-# RSDKv3/v4 DECOMPILATION SOURCE CODE LICENSE v1
+# RSDKv2/v3/v4 DECOMPILATION SOURCE CODE LICENSE v1
 
-The code in this repository is a decompilation of RSDK (Retro-Engine) version 3 or 4.
+The code in this repository is a decompilation of RSDK (Retro-Engine) version 2.
 There is original code in this repo, but most of the code is to be functionally the same as the version of RSDK this repo specifies.
 
 This code is provided as-is, that is to say, without liability or warranty. 
