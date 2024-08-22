@@ -44,7 +44,7 @@ endif
 OBJECTS = $(SOURCES:%=objects/%.o)
 DEPENDENCIES = $(SOURCES:%=objects/%.d)
 
-all: bin/Sonic-Nexus-Restored
+all: bin/Nexus-Restored
 
 include $(wildcard $(DEPENDENCIES))
 
@@ -52,12 +52,12 @@ objects/%.o: %
 	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS_ALL) -std=c++17 $< -o $@ -c
 
-bin/Sonic-Nexus-Restored: $(OBJECTS)
+bin/Nexus-Restored: $(OBJECTS)
 	mkdir -p $(@D)
 	$(CXX) $(CXXFLAGS_ALL) $(LDFLAGS_ALL) $^ -o $@ $(LIBS_ALL)
 
-install: bin/Sonic-Nexus-Restored
-	install -Dp -m755 bin/Sonic-Nexus-Restored $(prefix)/bin/Sonic-Nexus-Restored
+install: bin/Nexus-Restored
+	install -Dp -m755 bin/Nexus-Restored $(prefix)/bin/Nexus-Restored
 
 clean:
 	 rm -r -f bin && rm -r -f objects
