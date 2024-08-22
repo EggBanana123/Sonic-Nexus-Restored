@@ -293,15 +293,15 @@ void InitUserdata()
             inputDevice[5].contMappings = 5;
         if (!ini.GetInteger("Controller 1", "C", &inputDevice[INPUT_BUTTONC].contMappings))
             inputDevice[6].contMappings = 6;
-        if (!ini.GetInteger("Controller 1", "X", &inputDevice[INPUT_BUTTONA].contMappings))
+        if (!ini.GetInteger("Controller 1", "X", &inputDevice[INPUT_BUTTONX].contMappings))
             inputDevice[4].contMappings = 7;
-        if (!ini.GetInteger("Controller 1", "Y", &inputDevice[INPUT_BUTTONB].contMappings))
+        if (!ini.GetInteger("Controller 1", "Y", &inputDevice[INPUT_BUTTONY].contMappings))
             inputDevice[5].contMappings = 5;
-        if (!ini.GetInteger("Controller 1", "Z", &inputDevice[INPUT_BUTTONC].contMappings))
+        if (!ini.GetInteger("Controller 1", "Z", &inputDevice[INPUT_BUTTONZ].contMappings))
             inputDevice[6].contMappings = 6;
-        if (!ini.GetInteger("Controller 1", "L", &inputDevice[INPUT_BUTTONB].contMappings))
+        if (!ini.GetInteger("Controller 1", "L", &inputDevice[INPUT_BUTTONL].contMappings))
             inputDevice[5].contMappings = 11;
-        if (!ini.GetInteger("Controller 1", "R", &inputDevice[INPUT_BUTTONC].contMappings))
+        if (!ini.GetInteger("Controller 1", "R", &inputDevice[INPUT_BUTTONR].contMappings))
             inputDevice[6].contMappings = 12;
         if (!ini.GetInteger("Controller 1", "Start", &inputDevice[INPUT_START].contMappings))
             inputDevice[7].contMappings = 8;
