@@ -1,5 +1,5 @@
 # Sonic Nexus Restored
-Sonic Nexus decompilation modified for Sonic Nexus Restored
+Sonic Nexus 08 decompilation modified for Sonic Nexus Restored
 
 Without assets from the game, this decompilation will not run. You can download the game [here](https://info.sonicretro.org/Sonic_Nexus).
 
@@ -9,6 +9,7 @@ Without assets from the game, this decompilation will not run. You can download 
 # Additional Tweaks
 * Added buttons featured in v4 (X, Y, Z,  L, R,  Select)
 * WASD controls by default hehe
+* Extra life at 100 rings, not 99
 * more junk to be added soon !11!!
 
 # How to build
