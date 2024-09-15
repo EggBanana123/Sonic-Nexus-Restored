@@ -31,14 +31,16 @@ void InitSystemMenu()
         textMenuSurfaceNo = 0;
         LoadGIFFile("Data/Game/SystemText.gif", 0);
         SetupTextMenu(&gameMenu[0], 0);
-        AddTextMenuEntry(&gameMenu[0], "RETRO SONIC DEFAULT MENU");
+        AddTextMenuEntry(&gameMenu[0], "SONIC NEXUS RESTORED");
         AddTextMenuEntry(&gameMenu[0], " ");
         AddTextMenuEntry(&gameMenu[0], " ");
         AddTextMenuEntry(&gameMenu[0], " ");
         AddTextMenuEntry(&gameMenu[0], " ");
         AddTextMenuEntry(&gameMenu[0], " ");
         AddTextMenuEntry(&gameMenu[0], " ");
-        AddTextMenuEntry(&gameMenu[0], "1 PLAYER");
+        AddTextMenuEntry(&gameMenu[0], "START GAME");
+        AddTextMenuEntry(&gameMenu[0], " ");
+        AddTextMenuEntry(&gameMenu[0], "STAGE SELECT");
         AddTextMenuEntry(&gameMenu[0], " ");
 #if RETRO_USE_MOD_LOADER
         AddTextMenuEntry(&gameMenu[0], "MODS");
@@ -73,14 +75,14 @@ void ProcessSystemMenu()
             if (keyPress.up)
                 gameMenu[0].selection2 -= 2;
 
-            if (gameMenu[0].selection2 > (RETRO_USE_MOD_LOADER ? 11 : 9))
+            if (gameMenu[0].selection2 > (RETRO_USE_MOD_LOADER ? 13 : 11))
                 gameMenu[0].selection2 = 7;
             if (gameMenu[0].selection2 < 7)
-                gameMenu[0].selection2 = (RETRO_USE_MOD_LOADER ? 11 : 9);
+                gameMenu[0].selection2 = (RETRO_USE_MOD_LOADER ? 13 : 11);
 
             DrawTextMenu(&gameMenu[0], SCREEN_CENTERX, 72);
             if (keyPress.start || keyPress.A) {
-                if (gameMenu[0].selection2 == 7) {
+                if (gameMenu[0].selection2 == 9) {
                     SetupTextMenu(&gameMenu[0], 0);
                     AddTextMenuEntry(&gameMenu[0], "SELECT A PLAYER");
                     SetupTextMenu(&gameMenu[1], 0);
@@ -91,7 +93,7 @@ void ProcessSystemMenu()
                     stageMode                  = DEVMENU_PLAYERSEL;
                 }
 #if RETRO_USE_MOD_LOADER
-                else if (gameMenu[0].selection2 == 9) {
+                else if (gameMenu[0].selection2 == 11) {
                     SetupTextMenu(&gameMenu[0], 0);
                     AddTextMenuEntry(&gameMenu[0], "MOD LIST");
                     SetupTextMenu(&gameMenu[1], 0);
@@ -116,6 +118,13 @@ void ProcessSystemMenu()
                     stageMode                  = DEVMENU_MODMENU;
                 }
 #endif
+                else if (gameMenu[0].selection2 == 7) {
+                    LoadPlayerFromList(0, 0);
+                    Engine.gameMode = ENGINE_MAINGAME;
+                    stageMode       = STAGEMODE_LOAD;
+                    activeStageList = Engine.startList_Game == 0xFF ? 0 : Engine.startList_Game;
+                    stageListPosition = Engine.startStage_Game == 0xFF ? 0 : Engine.startStage_Game;
+                }
                 else {
                     Engine.running = false;
                 }
@@ -165,14 +174,16 @@ void ProcessSystemMenu()
             else if (keyPress.B) {
                 stageMode = DEVMENU_MAIN;
                 SetupTextMenu(&gameMenu[0], 0);
-                AddTextMenuEntry(&gameMenu[0], "RETRO SONIC DEFAULT MENU");
+                AddTextMenuEntry(&gameMenu[0], "SONIC NEXUS RESTORED");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
-                AddTextMenuEntry(&gameMenu[0], "1 PLAYER");
+                AddTextMenuEntry(&gameMenu[0], "START GAME");
+                AddTextMenuEntry(&gameMenu[0], " ");
+                AddTextMenuEntry(&gameMenu[0], "STAGE SELECT");
                 AddTextMenuEntry(&gameMenu[0], " ");
 #if RETRO_USE_MOD_LOADER
                 AddTextMenuEntry(&gameMenu[0], "MODS");
@@ -340,7 +351,7 @@ void ProcessSystemMenu()
 
             char buffer[0x100];
             if (keyPress.A || keyPress.start /*|| keyPress.left || keyPress.right*/) {
-                modList[modOffset + gameMenu[1].selection1].active ^= 1; 
+                modList[modOffset + gameMenu[1].selection1].active ^= 1;
                 StrCopy(buffer, modList[modOffset + gameMenu[1].selection1].name.c_str());
                 StrAdd(buffer, ": ");
                 StrAdd(buffer, (modList[modOffset + gameMenu[1].selection1].active ? "  Active" : "Inactive"));
@@ -351,14 +362,16 @@ void ProcessSystemMenu()
             if (keyPress.B) {
                 stageMode = DEVMENU_MAIN;
                 SetupTextMenu(&gameMenu[0], 0);
-                AddTextMenuEntry(&gameMenu[0], "RETRO SONIC DEFAULT MENU");
+                AddTextMenuEntry(&gameMenu[0], "SONIC NEXUS RESTORED");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], " ");
-                AddTextMenuEntry(&gameMenu[0], "1 PLAYER");
+                AddTextMenuEntry(&gameMenu[0], "START GAME");
+                AddTextMenuEntry(&gameMenu[0], " ");
+                AddTextMenuEntry(&gameMenu[0], "STAGE SELECT");
                 AddTextMenuEntry(&gameMenu[0], " ");
                 AddTextMenuEntry(&gameMenu[0], "MODS");
                 AddTextMenuEntry(&gameMenu[0], " ");
