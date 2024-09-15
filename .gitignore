@@ -22,6 +22,7 @@ bld/
 bin/
 [Bb]in/
 [Oo]bj/
+[Oo]bjects/
 
 #safety
 data.bin
@@ -242,3 +243,6 @@ _Pvt_Extensions/
 ModelManifest.xml
 
 Ignored/
+
+# Debugging tools
+Build.sh
