@@ -1,9 +1,14 @@
+RETRO_USE_MOD_LOADER         ?= 1
+FORCE_CASE_INSENSITIVE       ?= 1
+USE_HW_REN                   ?= 1
+RETRO_USE_ORIGINAL_CODE      ?= 0
+
 ifeq ($(STATIC),1)
   PKG_CONFIG_STATIC_FLAG = --static
   CXXFLAGS_ALL += -static
 endif
 
-CXXFLAGS_ALL += -MMD -MP -MF objects/$*.d $(shell pkg-config --cflags $(PKG_CONFIG_STATIC_FLAG) sdl2 vorbisfile vorbis) $(CXXFLAGS) 
+CXXFLAGS_ALL += -MMD -MP -MF objects/$*.d $(shell pkg-config --cflags $(PKG_CONFIG_STATIC_FLAG) sdl2 vorbisfile vorbis) $(CXXFLAGS)
 LDFLAGS_ALL += $(LDFLAGS)
 LIBS_ALL += $(shell pkg-config --libs $(PKG_CONFIG_STATIC_FLAG) sdl2 vorbisfile vorbis) -pthread $(LIBS)
 
@@ -30,15 +35,23 @@ SOURCES = \
   Nexus/Userdata.cpp \
   Nexus/Video.cpp
 
-	  
-ifeq ($(FORCE_CASE_INSENSITIVE),1)
-  CXXFLAGS_ALL += -DFORCE_CASE_INSENSITIVE
-  SOURCES += Nexus/fcaseopen.c
+
+ifeq ($(RETRO_USE_MOD_LOADER),1)
+  CXXFLAGS_ALL += -DRETRO_USE_MOD_LOADER
 endif
 
 ifeq ($(USE_HW_REN),1)
   CXXFLAGS_ALL += -DUSE_HW_REN
   LIBS_ALL += -lGL -lGLEW
+endif
+
+ifeq ($(FORCE_CASE_INSENSITIVE),1)
+  CXXFLAGS_ALL += -DFORCE_CASE_INSENSITIVE
+  SOURCES += Nexus/fcaseopen.c
+endif
+
+ifeq ($(RETRO_USE_ORIGINAL_CODE),0)
+  CXXFLAGS_ALL += -DRETRO_USE_ORIGINAL_CODE
 endif
 
 OBJECTS = $(SOURCES:%=objects/%.o)
