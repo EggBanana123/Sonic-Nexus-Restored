@@ -75,10 +75,3 @@ if(USE_HW_REN)
         target_compile_options(RetroEngine PRIVATE ${GLEW_STATIC_CFLAGS})
     endif()
 endif()
-
-if(RETRO_USE_MOD_LOADER)
-    set_target_properties(RetroEngine PROPERTIES
-        CXX_STANDARD 17
-        CXX_STANDARD_REQUIRED ON
-    )
-endif()
